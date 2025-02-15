@@ -22,7 +22,6 @@ public class RotateIntakeForward extends Command  {
     @Override
     public void execute() {
         intake.RotateIntakeForward();
-      //  System.out.println("RotateIntakeForward");
     }
     
 

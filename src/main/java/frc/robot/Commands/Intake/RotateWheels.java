@@ -12,7 +12,6 @@ public class RotateWheels extends Command  {
     public RotateWheels (Intake intake){
         this.intake = intake;
         addRequirements(intake);
-       // System.out.println("RotateWHeels");
 
     }
 

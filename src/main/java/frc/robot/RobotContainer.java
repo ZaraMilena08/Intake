@@ -14,9 +14,18 @@ import frc.robot.Commands.Intake.RotateIntakeForward;
 import frc.robot.Commands.Intake.RotateWheels;
 import frc.robot.Commands.Intake.RotateWheelsReverse;
 import frc.robot.Commands.Intake.Stop;
+import frc.robot.Commands.Intake.IsetPostition1;
+import frc.robot.Commands.Intake.IsetPostition2;
+
 
 import frc.robot.Subsystems.Delivery;
 import frc.robot.Commands.Delivery.RotatingArm;
+import frc.robot.Commands.Delivery.DsetPostition1;
+import frc.robot.Commands.Delivery.DsetPostition2;
+import frc.robot.Commands.Delivery.DsetPostition3;
+import frc.robot.Commands.Delivery.DsetPostition4;
+import frc.robot.Commands.Delivery.DsetPostition5;
+
 
 import frc.robot.Subsystems.Pneumatics;
 import frc.robot.Commands.Pneumatics.RotatingArmGrab;
@@ -35,8 +44,15 @@ public class RobotContainer {
   private RotateWheels RotateWheels = new RotateWheels(intake);
   private RotateWheelsReverse RotateWheelsReverse = new RotateWheelsReverse(intake);
   private Stop Stop = new Stop(intake);
+  private IsetPostition1 IsetPostition1 = new IsetPostition1(intake);
+  private IsetPostition2 IsetPostition2 = new IsetPostition2(intake);
 
   private RotatingArm RotatingArm = new RotatingArm(delivery);
+  private DsetPostition1 DsetPostition1 = new DsetPostition1(delivery);
+  private DsetPostition2 DsetPostition2 = new DsetPostition2(delivery);
+  private DsetPostition3 DsetPostition3 = new DsetPostition3(delivery);
+  private DsetPostition4 DsetPostition4 = new DsetPostition4(delivery);
+  private DsetPostition5 DsetPostition5 = new DsetPostition5(delivery);
 
   private RotatingArmRelease RotatingArmRelease = new RotatingArmRelease(pneumatics);
   private RotatingArmGrab RotatingArmGrab = new RotatingArmGrab(pneumatics);
@@ -53,26 +69,45 @@ public class RobotContainer {
    //xboxController.a().onTrue(RotateIntakeForward);
     xboxController.a().whileTrue(RotateIntakeForward);
 
-   //xboxController.b().onTrue(RotateWheels);
-    xboxController.b().whileTrue(RotateWheels);
+   //xboxController.a().onTrue(RotateWheels);
+    xboxController.a().whileTrue(RotateWheels);
 
-    //xboxController.x().onTrue(RotateIntakeBackward);
-    xboxController.x().whileTrue(RotateIntakeBackward);
-
-
-    //xboxController.y().onTrue(RotateWheelsReverse);
-    xboxController.y().whileTrue(RotateWheelsReverse);
+    //xboxController.a().onTrue(RotateIntakeBackward);
+    xboxController.a().whileTrue(RotateIntakeBackward);
 
 
+    //xboxController.a().onTrue(RotateWheelsReverse);
+    xboxController.a().whileTrue(RotateWheelsReverse);
 
-    // xboxController.a().onTrue(RotatingArmRelease);
-    // xboxController.a().whileTrue(RotatingArmRelease);
+    //xboxController.a().onTrue(RotatingArmRelease);
+    xboxController.a().whileTrue(RotatingArmRelease);
 
-    // xboxController.b().onTrue(RotatingArmGrab);
-    // xboxController.b().whileTrue(RotatingArmGrab);
+    //xboxController.a().onTrue(RotatingArmGrab);
+    xboxController.a().whileTrue(RotatingArmGrab);
 
-    // xboxController.x().onTrue(RotatingArm);
-    // xboxController.x().whileTrue(RotatingArm);
+    //xboxController.a().onTrue(RotatingArm);
+    xboxController.a().whileTrue(RotatingArm);
+
+    //xboxController.a().onTrue(IsetPostition1);
+    xboxController.a().whileTrue(IsetPostition1);
+
+    //xboxController.a().onTrue(IsetPostition2);
+    xboxController.a().whileTrue(IsetPostition2);
+
+    //xboxController.a().onTrue(DsetPostition1);
+    xboxController.a().whileTrue(DsetPostition1);
+
+    //xboxController.a().onTrue(DsetPostition2);
+    xboxController.a().whileTrue(DsetPostition2);
+
+    //xboxController.a().onTrue(DsetPostition3);
+    xboxController.a().whileTrue(DsetPostition3);
+
+    //xboxController.a().onTrue(DsetPostition4);
+    xboxController.a().whileTrue(DsetPostition4);
+
+    //xboxController.a().onTrue(DsetPostition5);
+    xboxController.a().whileTrue(DsetPostition5);
     
   }
 

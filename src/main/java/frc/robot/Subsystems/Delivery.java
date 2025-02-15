@@ -14,6 +14,9 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
+import com.revrobotics.spark.SparkBase.ControlType;
+import com.revrobotics.spark.SparkBase.PersistMode;
+
 
 public class Delivery extends SubsystemBase{
 
@@ -22,14 +25,13 @@ public class Delivery extends SubsystemBase{
 
     private SparkMax RotateArmMoterID = new SparkMax(Constants.RotateArmMoterID, MotorType.kBrushless);
     
-    private SparkMaxConfig m_config = new SparkMaxConfig();
+    private SparkMaxConfig config = new SparkMaxConfig();
 
     public Delivery(){
 
-
-    DEncoder = RotateArmMoterID.getEncoder();
-  
-    PIDController pid2 = new PIDController(0, 0, 0);
+    DpidController = RotateArmMoterID.getClosedLoopController();
+    RotateArmMoterID.configure(config, com.revrobotics.spark.SparkBase.ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
+    config.closedLoop.pid(0, 0, 0);
 
 
     }
@@ -40,19 +42,19 @@ public class Delivery extends SubsystemBase{
     }
 
     public  void DsetPostition1 () {
-        DEncoder.setPosition(0);
+        DpidController.setReference(0, ControlType.kPosition);
     }
     public  void DsetPostition2 () {
-        DEncoder.setPosition(0);
+        DpidController.setReference(0, ControlType.kPosition);
     }
     public  void DsetPostition3 () {
-        DEncoder.setPosition(0);
+        DpidController.setReference(0, ControlType.kPosition);
     }    
     public  void DsetPostition4 () {
-        DEncoder.setPosition(0);
+        DpidController.setReference(0, ControlType.kPosition);
     }
     public  void DsetPostition5 () {
-        DEncoder.setPosition(0);
+        DpidController.setReference(0, ControlType.kPosition);
     }
 
       public void Stop ( ) {
